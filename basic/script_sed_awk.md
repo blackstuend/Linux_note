@@ -1,3 +1,16 @@
+# grep 
+* 用正規表達是進行比對
+
+* 常用grep用法
+```
+$ grep -o //只把比對出來的內容顯示出來
+$ grep -E //like egrep
+$ grep -F //like fgrep 
+```
+* 常常會在字元後面寫一個\b ,\b是word boundary,因為正規表達是有貪婪的特性，所以要避免就是加\b
+```
+$ grep '\br..t\b' /etc/passwd //比對passwd 裡面有root的字元 
+```
 # Sed
 
 ## 原理
