@@ -16,6 +16,8 @@
 
 指令大全 https://home.gamer.com.tw/creationDetail.php?sn=3022918
 下面設置皆為out of band
+
+
 ```
 router > enable //進入特權模式
 router# configure terminal  //進入配置模式
@@ -46,7 +48,8 @@ router(config-line) login local //使用local的user帳密來登入
 ```
 接著就可以使用telnet連進去了!!
 
-
+## 出錯時
+* 按下shift + ctrl + 6 ，即可把程序強制停止
 ## 破解Cisco密碼
 [參考](https://blog.xuite.net/tolarku/blog/20365059-%E3%80%90CCNA%E3%80%91Cisco+Router+%E5%BF%98%E8%A8%98%E5%AF%86%E7%A2%BC+-+%E5%AF%86%E7%A2%BC%E5%BE%A9%E5%8E%9F)
 先重新開機然後按下ctrl +break
