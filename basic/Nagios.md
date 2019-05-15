@@ -16,9 +16,16 @@ retrty passwd :1234 //重新打上密碼
 # systemctl restart httpd 
 # systemctl restart nagios 
 ```
-
-
 * 在瀏覽器打上 192.168.0.104/nagios 輸入帳號密碼 即可到管理介面
+
+## client 端
+* vim /etc/nagios/nrpe.cfg
+* 找到 allowed_hosts = 127.0.0.1,192.168.56.104(server ip)
+
+## 查找到nrpe的預設command
+
+* cat /etc/nrpe.d/lcgdm-comman.cfg //查看預設的指令
+
 
 ## 更改設定檔
 
@@ -28,6 +35,8 @@ retrty passwd :1234 //重新打上密碼
 # cd /etc/nagios/object
 # vim localhost.cfg
 ````
+
+
 
 ```
 define host{
@@ -64,5 +73,27 @@ define service{
 ```
 # cd ./command.cfg
 command_name check_nrpe
-command_line $USER1/check_nrpe -H $HOSTADDRESS -c $ARG1$
+command_line $USER1/check_nrpe -H $HOSTADDRESS -c $ARG1$ //-H 代表 HOST -C 代表 COMMAND
+```
+
+## Nagios 腳本
+
+* STATE 的 代號 0 為 OK , 1 = WARRING ,2=CRITICAL ,3=UNKNOWN
+```
+# cd /usr/lib64/nagios/plugins
+# gedit check_watting
+```
+
+```
+#!/bin/bash
+STATE_OK=0
+STATE_CRITICAL=2
+w=`netstat -an | wc -l`
+if [ $w -le 1000 ]; then
+echo "ok connection low 1000";
+exit STATE_OK
+else
+echo "connection high 1000"
+exit STATE_CRITICAL;
+fi
 ```

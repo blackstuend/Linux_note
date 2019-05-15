@@ -28,13 +28,19 @@
 Router # clear ip route *
 ```
 
+
+## 查看 ip protocol
+
+```
+Router # show ip protocol
+```
 # 動態路由
 
 * IGP ，自治系統內自己跑的協定, EGP 是 自治系統與自治系統跑的協定
 * IGDP 主要 用 RIP 協定
 * RIP 有 RIP1 RIP2
 * Distance Veror(DV)是指路由器會透過相鄰的路由器會得到資訊 
-* OSPF link state : 路由器透露flooding 了解整個網路架構，後透過演算法計算不同網路會經過不同的路徑
+* OSP link state : 路由器透露flooding 了解整個網路架構，後透過演算法計算不同網路會經過不同的路徑
 
 RIP1 | RIP2 |
 -----|:----:|
