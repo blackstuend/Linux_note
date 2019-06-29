@@ -1,5 +1,14 @@
 # Git
+# git rebase
+* 用於將branch(分支)的commit移到你想要的branch
+* 要小心使用,因為會將要被移的branch刪除
+* 誤刪的話 可以使用 git checkout -b 'new_dev' address
+* 會將branch的所有commit直接連到master
 
+````
+
+$ git rebase dev
+````
 ## git checkout
 * 可用於切換branch
 * 切換commit
