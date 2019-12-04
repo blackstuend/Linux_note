@@ -12,7 +12,7 @@
 ```
 # switch(config)spanning-tree vlan 1 priority 40960
 ```
-* ![spanning_tree](./spaning_tree.PNG)
+* ![spanning_tree](./spaning_tree.png)
 1. 會先找尋1台路由器當作ROOT
     * 選擇Root的條件
         - 選擇switch的BID最小的
