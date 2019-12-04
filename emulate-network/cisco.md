@@ -34,6 +34,7 @@ router(config)# hostname R1 //更改名稱
 router(config) no hostname //只要加上no 就可以取消剛剛的設置
 router# show int f0/0 //顯示指定網卡router
 router(config)#username tom password tom123 //新增新的user與密碼 讓之後連進來的telent使用username來連 而不是root
+router(config)default range e0/0-1 //初始化界面使用範圍
 ```
 
 

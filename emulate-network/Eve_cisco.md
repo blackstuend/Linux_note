@@ -89,3 +89,9 @@ switch(config) > do show vtp status
 switch(config) > vtp mode server 
 
 ```
+
+## DTP
+[參考](https://www.jannet.hk/zh-Hant/post/dynamic-trunking-protocol-dtp/)
+
+
+## VTP

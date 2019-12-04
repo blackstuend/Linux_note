@@ -6,6 +6,12 @@
 # ping 12.1.1.2 source 1.1.1.1
 ```
 
+* 新增路由
+
+```
+# ip route (紀錄的位址) (紀錄位址的mask) (走哪個Interface)
+```
+
 * 靜態路由 route 與 route 互聯 用serial port(只會一對一) ，如果是用乙太網路連 ，可能會連到switch
 * serial port 可以用 ip route address mask 網路卡號 ，
 * 乙太網路 用 ip route address mask ip位址
@@ -24,7 +30,7 @@
 ````
 # 刪除所有路由
 
-```clear
+```
 Router # clear ip route *
 ```
 
@@ -60,15 +66,14 @@ Route(config) #router rip
 Route(config-router) #version 2
 Route(config-router) #no auto-summary //不自動彙整
 Route(config-router) #nework 12.1.1.0 
-Route(config-router) #network 
 ```
 ## R2
 ```
 Route(config) #router rip 
 Route(config-router) #version 2
 Route(config-router) #no auto-summary //不自動彙整
-Route(config-router) #nework 12.1.1.0 //不自動彙整
-Route(config-router) #nework 23.1.1.0 //不自動彙整
+Route(config-router) #nework 12.1.1.0 
+Route(config-router) #nework 23.1.1.0
 ```
 ## R3
 ```
@@ -80,7 +85,7 @@ Route(config-router) #nework 23.1.1.0 //不自動彙整
 
 # Rip Auto-summary
 
-* 當他不做彙整的時候，會把學到的全部丟進路油表裡面
+* 當他不做彙整的時候，會把學到的全部丟進路由表裡面
 * 如果進行彙整，那會把路由表的網路變成超網
 * 怎麼樣才能彙整成超網，假設有4個ip
 1. 192.168.1.0/24
